@@ -3,32 +3,37 @@
 $hue               : 0;
 $base-color : hsl($hue, 100%, 50%);
 
-@mixin establish-color-scheme($base-color, $variant) {
-    $scheme-base-color : null;
-    $scheme-variant1   : null;
-    $scheme-variant2   : null;
-    $scheme-variant3   : null;
-    $scheme-variant4   : null;
+@function adjust-base-color($base-color, $scheme, $n) {
+  $s: percentage(nth(nth($scheme, $n), 1))/100;
+  $l: percentage(nth(nth($scheme, $n), 2))/100;
+  $color: adjust-color($base-color, $saturation: $s, $lightness: $l);
 
-  @if ($variant == 'default scheme') {
-    $scheme-base-color : adjust-color($base-color, $saturation:   0%, $lightness:   0%);
-    $scheme-variant1   : adjust-color($base-color, $saturation: -40%, $lightness:  -3%); // hsl(0, 60%, 47%);
-    $scheme-variant2   : adjust-color($base-color, $saturation:   0%, $lightness: -17%); // hsl(0, 100%, 33%);
-    $scheme-variant3   : adjust-color($base-color, $saturation:   0%, $lightness:  13%); // hsl(0, 100%, 63%);
-    $scheme-variant4   : adjust-color($base-color, $saturation:   0%, $lightness:  23%); // hsl(0, 100%, 73%);
-  } @else if ($variant == 'more contrast') {
-    $scheme-base-color : adjust-color($base-color, $saturation:  32%, $lightness:   0%);
-    $scheme-variant1   : adjust-color($base-color, $saturation: -57%, $lightness: -18%); // hsl(0, 43%, 42%);
-    $scheme-variant2   : adjust-color($base-color, $saturation:  -6%, $lightness: -25%); // hsl(0, 94%, 25%);
-    $scheme-variant3   : adjust-color($base-color, $saturation: -11%, $lightness:  17%); // hsl(0, 89%, 67%);
-    $scheme-variant4   : adjust-color($base-color, $saturation: -17%, $lightness:  29%); // hsl(0, 83%, 79%);
+  @return $color;
+}
+
+@function scheme-list($variant) {
+  // default scheme:
+  $scheme: (0 0) (-40 -3) (0 -17) (0 13) (0 23);
+
+  @if ($variant == 'more contrast') {
+    $scheme: (32 0) (-57 -18) (-6 -25) (-11 17) (-17 29);
   } @else if ($variant == 'high contrast') {
-    $scheme-base-color : adjust-color($base-color, $saturation:  32%, $lightness:   0%);
-    $scheme-variant1   : adjust-color($base-color, $saturation: -61%, $lightness: -10%); // hsl(0, 39%, 40%);
-    $scheme-variant2   : adjust-color($base-color, $saturation:  -5%, $lightness: -28%); // hsl(0, 95%, 22%);
-    $scheme-variant3   : adjust-color($base-color, $saturation:  -8%, $lightness:  20%); // hsl(0, 92%, 70%);
-    $scheme-variant4   : adjust-color($base-color, $saturation: -14%, $lightness:  33%); // hsl(0, 86%, 83%);
+    $scheme: (32 0) (-61 -10) (-5 -28) (-8 20) (-14 33);
+  } @else if ($variant == 'max contrast') {
+    $scheme: (0 0) (-67 -12) (0 -35) (0 25) (0 45);
   }
+
+  @return $scheme;
+}
+
+@mixin establish-color-scheme($base-color, $variant) {
+  $scheme: scheme-list($variant);
+
+  $scheme-base-color : adjust-base-color($base-color, $scheme, 1);
+  $scheme-variant1   : adjust-base-color($base-color, $scheme, 2);
+  $scheme-variant2   : adjust-base-color($base-color, $scheme, 3);
+  $scheme-variant3   : adjust-base-color($base-color, $scheme, 4);
+  $scheme-variant4   : adjust-base-color($base-color, $scheme, 5);
 
   .base-color {
     background-color: $scheme-base-color;
@@ -49,7 +54,7 @@ $base-color : hsl($hue, 100%, 50%);
 
 .color-scheme-preview {
   .primary {
-    @include establish-color-scheme($base-color, 'default scheme');
+    @include establish-color-scheme($base-color, 'max contrast');
   }
 }
 
