@@ -1,6 +1,10 @@
 @import 'mixins/color-scheme';
 
-@include establish-color-scheme($base-color, 'more contrast');
+$hue       : 0;
+$base-color: hsl($hue, 100%, 50%);
+$variant   : 'more contrast';
+
+@include establish-color-scheme($base-color, $variant);
 .color-scheme-preview {
   .primary {
     .base-color { @extend .pri-0; }

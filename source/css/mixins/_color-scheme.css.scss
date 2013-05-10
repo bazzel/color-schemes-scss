@@ -1,7 +1,25 @@
 @import 'compass';
 
-$hue       : 0;
-$base-color: hsl($hue, 100%, 50%);
+// Generates a bunch of classes setting their background-color
+// property to different variations for the given $base-color.
+// These variations depend on the given $variant.
+// Examples of the $variant are: 'default scheme', 'more contrast', 'high contrast'
+// 'max contrast', 'less contrast'
+@mixin establish-color-scheme($base-color, $variant: 'default scheme') {
+  $scheme: scheme-list($variant);
+
+  $scheme-base-color: adjust-base-color($base-color, $scheme, 1);
+  $scheme-variant1  : adjust-base-color($base-color, $scheme, 2);
+  $scheme-variant2  : adjust-base-color($base-color, $scheme, 3);
+  $scheme-variant3  : adjust-base-color($base-color, $scheme, 4);
+  $scheme-variant4  : adjust-base-color($base-color, $scheme, 5);
+
+  .pri-0 { background-color: $scheme-base-color; }
+  .pri-1 { background-color: $scheme-variant1; }
+  .pri-2 { background-color: $scheme-variant2; }
+  .pri-3 { background-color: $scheme-variant3; }
+  .pri-4 { background-color: $scheme-variant4; }
+}
 
 @function adjust-base-color($base-color, $scheme, $n) {
   $sval: percentage(nth(nth($scheme, $n), 1))/100;
@@ -30,26 +48,5 @@ $base-color: hsl($hue, 100%, 50%);
   }
 
   @return $scheme;
-}
-
-// Generates a bunch of classes setting their background-color
-// property to different variations for the given $base-color.
-// These variations depend on the given $variant.
-// Examples of the $variant are: 'default scheme', 'more contrast', 'high contrast'
-// 'max contrast', 'less contrast'
-@mixin establish-color-scheme($base-color, $variant: 'default scheme') {
-  $scheme: scheme-list($variant);
-
-  $scheme-base-color: adjust-base-color($base-color, $scheme, 1);
-  $scheme-variant1  : adjust-base-color($base-color, $scheme, 2);
-  $scheme-variant2  : adjust-base-color($base-color, $scheme, 3);
-  $scheme-variant3  : adjust-base-color($base-color, $scheme, 4);
-  $scheme-variant4  : adjust-base-color($base-color, $scheme, 5);
-
-  .pri-0 { background-color: $scheme-base-color; }
-  .pri-1 { background-color: $scheme-variant1; }
-  .pri-2 { background-color: $scheme-variant2; }
-  .pri-3 { background-color: $scheme-variant3; }
-  .pri-4 { background-color: $scheme-variant4; }
 }
 
