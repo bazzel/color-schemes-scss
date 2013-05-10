@@ -2,7 +2,16 @@
 
 $hue       : 0;
 $base-color: hsl($hue, 100%, 50%);
-$variant   : 'more contrast';
+/*$variant   : 'default scheme';*/
+/*$variant   : 'more contrast';*/
+/*$variant   : 'high contrast';*/
+/*$variant   : 'max contrast';*/
+/*$variant   : 'less contrast';*/
+/*$variant   : 'min contrast';*/
+/*$variant   : 'medium dark';*/
+/*$variant   : 'dark';*/
+/*$variant   : 'very dark';*/
+$variant   : 'pastel';
 
 @include establish-color-scheme($base-color, $variant);
 .color-scheme-preview {
