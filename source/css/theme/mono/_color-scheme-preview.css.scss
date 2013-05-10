@@ -1,0 +1,22 @@
+@import 'compass';
+
+.color-scheme-preview {
+  .primary {
+    .base-color {
+      background-color: hsl(0, 100%, 50%);
+    }
+    .variant1 {
+      background-color: hsl(0, 60%, 47%);
+    }
+    .variant2 {
+      background-color: hsl(0, 100%, 33%);
+    }
+    .variant3 {
+      background-color: hsl(0, 100%, 63%);
+    }
+    .variant4 {
+      background-color: hsl(0, 100%, 73%);
+    }
+  }
+}
+

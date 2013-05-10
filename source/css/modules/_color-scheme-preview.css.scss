@@ -1,0 +1,34 @@
+@import 'compass';
+
+$outer-column-width: 22%;
+$inner-column-width: 100% - 2*$outer-column-width;
+$gradient-start: hsl(0, 0%, 26%);
+$gradient-stop: hsl(0, 0%, 9%);
+
+.color-scheme-preview {
+  @include background-image(linear-gradient(top,  $gradient-start 0%, $gradient-stop 100%));
+  padding: {
+    left: 4em;
+    right: 4em;
+  }
+  @include rhythm(0,4,4,0);
+  width: auto;
+  position: absolute;
+  top: rhythm(4);
+  left: 4em;
+  right: 4em;
+  @include box-shadow(rgba(black, 0.6) 6px 6px 6px);
+  @include border-radius(9px);
+  table {
+    width: 100%;
+    td {
+      height: rhythm(7);
+      &.variant1, &.variant3 {
+        width: $outer-column-width;
+      }
+      &.base-color {
+        width: $inner-column-width;
+      }
+    }
+  }
+}
