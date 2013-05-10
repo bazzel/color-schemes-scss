@@ -1,5 +1,5 @@
-$hue       : 0;
-$saturation: 100%;
-$lighting  : 50%;
+$hue       : 0;    // (0..360)
+$saturation: 100%; // (0..100)
+$lighting  : 50%;  // (0..100)
 $base-color: hsl($hue, $saturation, $lighting);
 
