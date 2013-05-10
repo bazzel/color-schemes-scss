@@ -55,6 +55,32 @@
     $scheme: (0 -40) (-8 -40) (0 -41) (-11 -35) (-16 -35);
   } @else if ($variant == 'pastel') {
     $scheme: (-34 13) (-56 8) (-50 -2) (-30 18) (-32 21);
+  } @else if ($variant == 'medium dark pastel') {
+    $scheme: (-61 -10) (-68 -13) (-50 -19) (-67 1) (-69 3);
+  } @else if ($variant == 'dark pastel') {
+    $scheme: (-61 -28) (-68 -30) (-50 -34) (-68 -14) (-73 -13);
+  } @else if ($variant == 'very dark pastel') {
+    $scheme: (-60 -36) (-65 -36) (-58 -37) (-63 -30) (-68 -29);
+  } @else if ($variant == 'light pale pastel') {
+    $scheme: (-46 29) (-59 25) (-55 20) (-46 30) (-46 21);
+  } @else if ($variant == 'medium pale pastel') {
+    $scheme: (-86 -1) (-86 -3) (-81 -6) (-85 3) (-85 4);
+  } @else if ($variant == 'dark pale pastel') {
+    $scheme: (-85 -24) (-86 -25) (-81 -27) (-87 -27) (-87 -27);
+  } @else if ($variant == 'very dark pale pastel') {
+    $scheme: (-89 -32) (-89 -32) (-86 -33) (-89 -28) (-90 -28);
+  } @else if ($variant == 'almost grays light') {
+    $scheme: (-81 38) (-88 34) (-83 27) (-81 39) (-81 39);
+  } @else if ($variant == 'almost grays with color accents light') {
+    $scheme: (-81 38) (-97 16) (-65 -7) (-74 43) (-81 44);
+  } @else if ($variant == 'almost grays medium') {
+    $scheme: (-97 5) (-97 2) (-92 -2) (-97 9) (-97 9);
+  } @else if ($variant == 'almost grays with color accents medium') {
+    $scheme: (-97 5) (-98 -9) (-64 -23) (-93 26) (-95 27);
+  } @else if ($variant == 'almost grays dark') {
+    $scheme: (-97 -31) (-98 -32) (-93 -33) (-98 -23) (-98 -23);
+  } @else if ($variant == 'almost grays with color accents dark') {
+    $scheme: (-97 -31) (-99 -35) (-65 -40) (-97 9) (-98 9);
   }
 
   @return $scheme;

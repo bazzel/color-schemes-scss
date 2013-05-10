@@ -1,8 +1,7 @@
+@import 'colors';
 @import 'mixins/color-scheme';
 
-$hue       : 0;
-$base-color: hsl($hue, 100%, 50%);
-/*$variant   : 'default scheme';*/
+$variant   : 'default scheme';
 /*$variant   : 'more contrast';*/
 /*$variant   : 'high contrast';*/
 /*$variant   : 'max contrast';*/
@@ -11,9 +10,23 @@ $base-color: hsl($hue, 100%, 50%);
 /*$variant   : 'medium dark';*/
 /*$variant   : 'dark';*/
 /*$variant   : 'very dark';*/
-$variant   : 'pastel';
+/*$variant   : 'pastel';*/
+/*$variant   : 'medium dark pastel';*/
+/*$variant   : 'dark pastel';*/
+/*$variant   : 'very dark pastel';*/
+/*$variant   : 'light pale pastel';*/
+/*$variant   : 'medium pale pastel';*/
+/*$variant   : 'dark pale pastel';*/
+/*$variant   : 'very dark pale pastel';*/
+/*$variant   : 'almost grays light';*/
+/*$variant   : 'almost grays with color accents light';*/
+/*$variant   : 'almost grays medium';*/
+/*$variant   : 'almost grays with color accents medium';*/
+/*$variant   : 'almost grays dark';*/
+/*$variant   : 'almost grays with color accents dark';*/
 
 @include establish-color-scheme($base-color, $variant);
+
 .color-scheme-preview {
   .primary {
     .base-color { @extend .pri-0; }
