@@ -22,12 +22,25 @@ $gradient-stop: hsl(0, 0%, 9%);
   table {
     width: 100%;
     td {
+      text-align: center;
       height: rhythm(7);
       &.variant1, &.variant3 {
         width: $outer-column-width;
       }
       &.base-color {
         width: $inner-column-width;
+      }
+      .light, .medium, .dark {
+        display: inline;
+      }
+      .light {
+        color: hsl(0, 100%, 100%);
+      }
+      .medium {
+        color: hsl(0, 0%, 50%);
+      }
+      .dark {
+        color: hsl(0, 100%, 0%);
       }
     }
   }
