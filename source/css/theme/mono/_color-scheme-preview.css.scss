@@ -1,11 +1,29 @@
 @import 'compass';
 
 $hue               : 0;
-$scheme-base-color : hsl($hue, 100%, 50%);
-$scheme-variant1   : adjust-color($scheme-base-color, $saturation: -40%, $lightness: -3%); // hsl(0, 60%, 47%);
-$scheme-variant2   : adjust-color($scheme-base-color, $lightness: -17%);                   // hsl(0, 100%, 33%);
-$scheme-variant3   : adjust-color($scheme-base-color, $lightness: 13%);                    // hsl(0, 100%, 63%);
-$scheme-variant4   : adjust-color($scheme-base-color, $lightness: 23%);                    // hsl(0, 100%, 73%);
+$base-color : hsl($hue, 100%, 50%);
+
+// Default scheme:
+$scheme-base-color : adjust-color($base-color, $saturation:   0%, $lightness:   0%);
+$scheme-variant1   : adjust-color($base-color, $saturation: -40%, $lightness:  -3%); // hsl(0, 60%, 47%);
+$scheme-variant2   : adjust-color($base-color, $saturation:   0%, $lightness: -17%); // hsl(0, 100%, 33%);
+$scheme-variant3   : adjust-color($base-color, $saturation:   0%, $lightness:  13%); // hsl(0, 100%, 63%);
+$scheme-variant4   : adjust-color($base-color, $saturation:   0%, $lightness:  23%); // hsl(0, 100%, 73%);
+
+// More contrast:
+$scheme-base-color : adjust-color($base-color, $saturation:  32%, $lightness:   0%);
+$scheme-variant1   : adjust-color($base-color, $saturation: -57%, $lightness: -18%); // hsl(0, 43%, 42%);
+$scheme-variant2   : adjust-color($base-color, $saturation:  -6%, $lightness: -25%); // hsl(0, 94%, 25%);
+$scheme-variant3   : adjust-color($base-color, $saturation: -11%, $lightness:  17%); // hsl(0, 89%, 67%);
+$scheme-variant4   : adjust-color($base-color, $saturation: -17%, $lightness:  29%); // hsl(0, 83%, 79%);
+
+// High contrast:
+$scheme-base-color : adjust-color($base-color, $saturation:  32%, $lightness:   0%);
+$scheme-variant1   : adjust-color($base-color, $saturation: -61%, $lightness: -10%); // hsl(0, 39%, 40%);
+$scheme-variant2   : adjust-color($base-color, $saturation:  -5%, $lightness: -28%); // hsl(0, 95%, 22%);
+$scheme-variant3   : adjust-color($base-color, $saturation:  -8%, $lightness:  20%); // hsl(0, 92%, 70%);
+$scheme-variant4   : adjust-color($base-color, $saturation: -14%, $lightness:  33%); // hsl(0, 86%, 83%);
+
 
 .color-scheme-preview {
   .primary {
