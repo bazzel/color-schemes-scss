@@ -3,7 +3,7 @@
 $outer-column-width: 22%;
 $inner-column-width: 100% - 2*$outer-column-width;
 $gradient-start: hsl(0, 0%, 26%);
-$gradient-stop: hsl(0, 0%, 9%);
+$gradient-stop: hsl(0, 0%, 12%);
 
 .color-scheme-preview {
   @include background-image(linear-gradient(top,  $gradient-start 0%, $gradient-stop 100%));
