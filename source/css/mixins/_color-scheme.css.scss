@@ -1,0 +1,55 @@
+@import 'compass';
+
+$hue       : 0;
+$base-color: hsl($hue, 100%, 50%);
+
+@function adjust-base-color($base-color, $scheme, $n) {
+  $sval: percentage(nth(nth($scheme, $n), 1))/100;
+  $lval: percentage(nth(nth($scheme, $n), 2))/100;
+  $color: adjust-color($base-color, $saturation: $sval, $lightness: $lval);
+
+  @return $color;
+}
+
+// Returns a 2-dimensional array with values
+// for a given $variant
+// for adjusting saturation and lighting of
+// each of the 5 variants of a color scheme.
+@function scheme-list($variant) {
+  // default scheme:
+  $scheme: (0 0) (-40 -3) (0 -17) (0 13) (0 23);
+
+  @if ($variant == 'more contrast') {
+    $scheme: (32 0) (-57 -18) (-6 -25) (-11 17) (-17 29);
+  } @else if ($variant == 'high contrast') {
+    $scheme: (32 0) (-61 -10) (-5 -28) (-8 20) (-14 33);
+  } @else if ($variant == 'max contrast') {
+    $scheme: (0 0) (-67 -12) (0 -35) (0 25) (0 45);
+  } @else if ($variant == 'less contrast') {
+    $scheme: (0 0) (-28 -1) (0 -12) (0 8) (0 15);
+  }
+
+  @return $scheme;
+}
+
+// Generates a bunch of classes setting their background-color
+// property to different variations for the given $base-color.
+// These variations depend on the given $variant.
+// Examples of the $variant are: 'default scheme', 'more contrast', 'high contrast'
+// 'max contrast', 'less contrast'
+@mixin establish-color-scheme($base-color, $variant: 'default scheme') {
+  $scheme: scheme-list($variant);
+
+  $scheme-base-color: adjust-base-color($base-color, $scheme, 1);
+  $scheme-variant1  : adjust-base-color($base-color, $scheme, 2);
+  $scheme-variant2  : adjust-base-color($base-color, $scheme, 3);
+  $scheme-variant3  : adjust-base-color($base-color, $scheme, 4);
+  $scheme-variant4  : adjust-base-color($base-color, $scheme, 5);
+
+  .pri-0 { background-color: $scheme-base-color; }
+  .pri-1 { background-color: $scheme-variant1; }
+  .pri-2 { background-color: $scheme-variant2; }
+  .pri-3 { background-color: $scheme-variant3; }
+  .pri-4 { background-color: $scheme-variant4; }
+}
+
