@@ -1,6 +1,9 @@
 @import 'colors';
 @import 'mixins/color-scheme';
 
+$model: 'mono';
+/*$model: 'complement';*/
+
 $variant   : 'default scheme';
 /*$variant   : 'more contrast';*/
 /*$variant   : 'high contrast';*/
@@ -25,7 +28,7 @@ $variant   : 'default scheme';
 /*$variant   : 'almost grays dark';*/
 /*$variant   : 'almost grays with color accents dark';*/
 
-@include establish-color-scheme($base-color, $variant);
+@include establish-color-scheme($base-color, $model, $variant);
 
 .color-scheme-preview {
   .primary {
@@ -34,5 +37,12 @@ $variant   : 'default scheme';
     .variant2   { @extend .pri-2; }
     .variant3   { @extend .pri-3; }
     .variant4   { @extend .pri-4; }
+  }
+  .complementary {
+    .base-color { @extend .compl-0; }
+    .variant1   { @extend .compl-1; }
+    .variant2   { @extend .compl-2; }
+    .variant3   { @extend .compl-3; }
+    .variant4   { @extend .compl-4; }
   }
 }

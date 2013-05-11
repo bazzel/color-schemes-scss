@@ -21,9 +21,18 @@ $gradient-stop: hsl(0, 0%, 12%);
   @include border-radius(9px);
   table {
     width: 100%;
+    tr.primary {
+      td {
+        height: rhythm(4);
+      }
+    }
+    tr.complementary {
+      td {
+        height: rhythm(2);
+      }
+    }
     td {
       text-align: center;
-      height: rhythm(7);
       &.variant1, &.variant3 {
         width: $outer-column-width;
       }
