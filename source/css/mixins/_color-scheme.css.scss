@@ -5,9 +5,7 @@
 // These variations depend on the given $variant.
 // Examples of the $variant are: 'default scheme', 'more contrast', 'high contrast'
 // 'max contrast', 'less contrast', 'min contrast'
-@mixin establish-color-scheme($base-color, $model: 'mono', $variant: 'default scheme') {
-  $compl-color: complement($base-color);
-
+@mixin establish-color-scheme($base-color, $model: 'mono', $variant: 'default scheme', $angle: 45) {
   $scheme: scheme-list($variant);
 
   .pri-0 { background-color: adjust-base-color($base-color, $scheme, 1); }
@@ -17,11 +15,31 @@
   .pri-4 { background-color: adjust-base-color($base-color, $scheme, 5); }
 
   @if ($model == 'complement') {
+    $compl-color: complement($base-color);
+
     .compl-0 { background-color: adjust-base-color($compl-color, $scheme, 1); }
     .compl-1 { background-color: adjust-base-color($compl-color, $scheme, 2); }
     .compl-2 { background-color: adjust-base-color($compl-color, $scheme, 3); }
     .compl-3 { background-color: adjust-base-color($compl-color, $scheme, 4); }
     .compl-4 { background-color: adjust-base-color($compl-color, $scheme, 5); }
+  }
+
+  @if ($model == 'triad') {
+    $sec1-color: adjust-hue($base-color, (180 - 0.5*$angle));
+
+    .sec1-0 { background-color: adjust-base-color($sec1-color, $scheme, 1); }
+    .sec1-1 { background-color: adjust-base-color($sec1-color, $scheme, 2); }
+    .sec1-2 { background-color: adjust-base-color($sec1-color, $scheme, 3); }
+    .sec1-3 { background-color: adjust-base-color($sec1-color, $scheme, 4); }
+    .sec1-4 { background-color: adjust-base-color($sec1-color, $scheme, 5); }
+
+    $sec2-color: adjust-hue($base-color, (0.5*$angle + 180));
+
+    .sec2-0 { background-color: adjust-base-color($sec2-color, $scheme, 1); }
+    .sec2-1 { background-color: adjust-base-color($sec2-color, $scheme, 2); }
+    .sec2-2 { background-color: adjust-base-color($sec2-color, $scheme, 3); }
+    .sec2-3 { background-color: adjust-base-color($sec2-color, $scheme, 4); }
+    .sec2-4 { background-color: adjust-base-color($sec2-color, $scheme, 5); }
   }
 
 }

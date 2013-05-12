@@ -26,7 +26,7 @@ $gradient-stop: hsl(0, 0%, 12%);
         height: rhythm(4);
       }
     }
-    tr.complementary {
+    tr.complementary, tr.secondary-a, tr.secondary-b {
       td {
         height: rhythm(2);
       }
