@@ -1,9 +1,10 @@
 @import 'colors';
 @import 'mixins/color-scheme';
 
-$model: 'mono';
-$model: 'complement';
-$model: 'triad';
+/*$model: 'mono';*/
+/*$model: 'complement';*/
+/*$model: 'triad';*/
+$model: 'tetrad';
 
 $variant   : 'default scheme';
 /*$variant   : 'more contrast';*/
