@@ -15,7 +15,7 @@
   .pri-3 { background-color: adjust-base-color($base-color, $scheme, 4); }
   .pri-4 { background-color: adjust-base-color($base-color, $scheme, 5); }
 
-  @if ($model == 'complement') or ($model == 'tetrad') {
+  @if ($model == 'complement') or ($model == 'tetrad') or ($model == 'accented analogic') {
     .compl-0 { background-color: adjust-base-color($compl-color, $scheme, 1); }
     .compl-1 { background-color: adjust-base-color($compl-color, $scheme, 2); }
     .compl-2 { background-color: adjust-base-color($compl-color, $scheme, 3); }
@@ -59,7 +59,7 @@
     .sec2-4 { background-color: adjust-base-color($sec2-color, $scheme, 5); }
   }
 
-  @if ($model == 'analogic') {
+  @if ($model == 'analogic') or ($model == 'accented analogic') {
     $sec1-color: adjust-hue($base-color, $angle);
 
     .sec1-0 { background-color: adjust-base-color($sec1-color, $scheme, 1); }
