@@ -4,7 +4,8 @@
 /*$model: 'mono';*/
 /*$model: 'complement';*/
 /*$model: 'triad';*/
-$model: 'tetrad';
+/*$model: 'tetrad';*/
+$model: 'analogic';
 
 $variant   : 'default scheme';
 /*$variant   : 'more contrast';*/
@@ -30,7 +31,7 @@ $variant   : 'default scheme';
 /*$variant   : 'almost grays dark';*/
 /*$variant   : 'almost grays with color accents dark';*/
 
-$angle: 45;
+$angle: 30;
 
 @include establish-color-scheme($base-color, $model, $variant, $angle);
 
