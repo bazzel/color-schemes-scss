@@ -6,75 +6,39 @@
 // Examples of the $variant are: 'default scheme', 'more contrast', 'high contrast'
 // 'max contrast', 'less contrast', 'min contrast'
 @mixin establish-color-scheme($base-color, $model: 'mono', $variant: 'default scheme', $angle: 45) {
-  $compl-color: complement($base-color);
   $scheme: scheme-list($variant);
-
-  .pri-0 { background-color: adjust-base-color($base-color, $scheme, 1); }
-  .pri-1 { background-color: adjust-base-color($base-color, $scheme, 2); }
-  .pri-2 { background-color: adjust-base-color($base-color, $scheme, 3); }
-  .pri-3 { background-color: adjust-base-color($base-color, $scheme, 4); }
-  .pri-4 { background-color: adjust-base-color($base-color, $scheme, 5); }
+  $compl-color: complement($base-color);
+  @include generate-rules($base-color, $scheme, 'pri');
 
   @if ($model == 'complement') or ($model == 'tetrad') or ($model == 'accented analogic') {
-    .compl-0 { background-color: adjust-base-color($compl-color, $scheme, 1); }
-    .compl-1 { background-color: adjust-base-color($compl-color, $scheme, 2); }
-    .compl-2 { background-color: adjust-base-color($compl-color, $scheme, 3); }
-    .compl-3 { background-color: adjust-base-color($compl-color, $scheme, 4); }
-    .compl-4 { background-color: adjust-base-color($compl-color, $scheme, 5); }
+    @include generate-rules($compl-color, $scheme, 'compl');
   }
 
   @if ($model == 'triad') {
     $sec1-color: adjust-hue($base-color, (180 - $angle));
-
-    .sec1-0 { background-color: adjust-base-color($sec1-color, $scheme, 1); }
-    .sec1-1 { background-color: adjust-base-color($sec1-color, $scheme, 2); }
-    .sec1-2 { background-color: adjust-base-color($sec1-color, $scheme, 3); }
-    .sec1-3 { background-color: adjust-base-color($sec1-color, $scheme, 4); }
-    .sec1-4 { background-color: adjust-base-color($sec1-color, $scheme, 5); }
-
+    @include generate-rules($sec1-color, $scheme, 'sec1');
     $sec2-color: adjust-hue($base-color, ($angle + 180));
-
-    .sec2-0 { background-color: adjust-base-color($sec2-color, $scheme, 1); }
-    .sec2-1 { background-color: adjust-base-color($sec2-color, $scheme, 2); }
-    .sec2-2 { background-color: adjust-base-color($sec2-color, $scheme, 3); }
-    .sec2-3 { background-color: adjust-base-color($sec2-color, $scheme, 4); }
-    .sec2-4 { background-color: adjust-base-color($sec2-color, $scheme, 5); }
+    @include generate-rules($sec2-color, $scheme, 'sec2');
   }
 
   @if ($model == 'tetrad') {
     $sec1-color: adjust-hue($base-color, $angle);
-
-    .sec1-0 { background-color: adjust-base-color($sec1-color, $scheme, 1); }
-    .sec1-1 { background-color: adjust-base-color($sec1-color, $scheme, 2); }
-    .sec1-2 { background-color: adjust-base-color($sec1-color, $scheme, 3); }
-    .sec1-3 { background-color: adjust-base-color($sec1-color, $scheme, 4); }
-    .sec1-4 { background-color: adjust-base-color($sec1-color, $scheme, 5); }
-
+    @include generate-rules($sec1-color, $scheme, 'sec1');
     $sec2-color: adjust-hue($compl-color, $angle);
-
-    .sec2-0 { background-color: adjust-base-color($sec2-color, $scheme, 1); }
-    .sec2-1 { background-color: adjust-base-color($sec2-color, $scheme, 2); }
-    .sec2-2 { background-color: adjust-base-color($sec2-color, $scheme, 3); }
-    .sec2-3 { background-color: adjust-base-color($sec2-color, $scheme, 4); }
-    .sec2-4 { background-color: adjust-base-color($sec2-color, $scheme, 5); }
+    @include generate-rules($sec2-color, $scheme, 'sec2');
   }
 
   @if ($model == 'analogic') or ($model == 'accented analogic') {
     $sec1-color: adjust-hue($base-color, $angle);
-
-    .sec1-0 { background-color: adjust-base-color($sec1-color, $scheme, 1); }
-    .sec1-1 { background-color: adjust-base-color($sec1-color, $scheme, 2); }
-    .sec1-2 { background-color: adjust-base-color($sec1-color, $scheme, 3); }
-    .sec1-3 { background-color: adjust-base-color($sec1-color, $scheme, 4); }
-    .sec1-4 { background-color: adjust-base-color($sec1-color, $scheme, 5); }
-
+    @include generate-rules($sec1-color, $scheme, 'sec1');
     $sec2-color: adjust-hue($base-color, -$angle);
+    @include generate-rules($sec2-color, $scheme, 'sec2');
+  }
+}
 
-    .sec2-0 { background-color: adjust-base-color($sec2-color, $scheme, 1); }
-    .sec2-1 { background-color: adjust-base-color($sec2-color, $scheme, 2); }
-    .sec2-2 { background-color: adjust-base-color($sec2-color, $scheme, 3); }
-    .sec2-3 { background-color: adjust-base-color($sec2-color, $scheme, 4); }
-    .sec2-4 { background-color: adjust-base-color($sec2-color, $scheme, 5); }
+@mixin generate-rules($color, $scheme, $style-name) {
+  @for $i from 0 through 4 {
+    .#{$style-name}-#{$i} { background-color: adjust-base-color($color, $scheme, $i+1); }
   }
 }
 
