@@ -1,12 +1,12 @@
 @import 'colors';
 @import 'mixins/color-scheme';
 
-/*$model: 'mono';*/
+$model: 'mono';
 /*$model: 'complement';*/
 /*$model: 'triad';*/
 /*$model: 'tetrad';*/
 /*$model: 'analogic';*/
-$model: 'accented analogic';
+/*$model: 'accented analogic';*/
 
 $variant   : 'default scheme';
 /*$variant   : 'more contrast';*/
@@ -64,5 +64,13 @@ $angle: 30;
     .variant2   { @extend .compl-2; }
     .variant3   { @extend .compl-3; }
     .variant4   { @extend .compl-4; }
+  }
+
+  // Hide what we don't need
+  @if ($model == 'mono') or ($model == 'complement') {
+    .secondary-a, .secondary-b { display: none; }
+  }
+  @if ($model == 'mono') or ($model == 'triad') or ($model == 'analogic') {
+    .complementary { display: none; }
   }
 }
