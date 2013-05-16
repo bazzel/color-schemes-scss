@@ -28,16 +28,16 @@ $offset-horizontal: ($margin-horizontal * $base-font-size) - $offset;
     position: absolute;
     top: $offset-vertical;
     left: $offset-horizontal;
-    width: 50%;
-    height: 50%;
+    width: 75%;
+    height: 65%;
     background: white;
   }
   .palette-bg-2 {
     position: absolute;
     bottom: $offset-vertical;
     right: $offset-horizontal;
-    width: 50%;
-    height: 50%;
+    width: 75%;
+    height: 65%;
     background: black;
   }
   .palette {
