@@ -6,7 +6,7 @@ $model: 'mono';
 /*$model: 'triad';*/
 /*$model: 'tetrad';*/
 /*$model: 'analogic';*/
-/*$model: 'accented analogic';*/
+$model: 'accented analogic';
 
 $variant   : 'default scheme';
 /*$variant   : 'more contrast';*/
@@ -74,3 +74,5 @@ $angle: 30;
     .complementary { display: none; }
   }
 }
+
+// $('.color-scheme-preview table tr:visible td').each(function(idx, el) { console.log($(this).attr('class'), $(this).css('background-color')) })
