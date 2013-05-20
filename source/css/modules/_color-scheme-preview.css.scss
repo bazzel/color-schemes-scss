@@ -5,8 +5,8 @@ $inner-column-width: 100% - 2*$outer-column-width;
 $gradient-start: hsl(0, 0%, 26%);
 $gradient-stop: hsl(0, 0%, 12%);
 // table margin:
-$margin-vertical: 3; // lines
-$margin-horizontal: 5; // em
+$margin-vertical: 2; // lines
+$margin-horizontal: 3; // em
 // offset for white and black background:
 $offset: 6px;
 $offset-vertical: ($margin-vertical * $base-line-height) - $offset;
@@ -28,31 +28,31 @@ $offset-horizontal: ($margin-horizontal * $base-font-size) - $offset;
     position: absolute;
     top: $offset-vertical;
     left: $offset-horizontal;
-    width: 75%;
-    height: 65%;
+    width: 80%;
+    height: 80%;
     background: white;
   }
   .palette-bg-2 {
     position: absolute;
     bottom: $offset-vertical;
     right: $offset-horizontal;
-    width: 75%;
-    height: 65%;
+    width: 80%;
+    height: 80%;
     background: black;
   }
   .palette {
     position: absolute;
-    top: rhythm(3);
-    right: 5em;
-    bottom: rhythm(3);
-    left: 5em;
+    top: rhythm($margin-vertical);
+    right: $margin-horizontal * 1em;
+    bottom: rhythm($margin-vertical);
+    left: $margin-horizontal * 1em;
 
     table {
       width: 100%;
       height: 100%;
       tr.primary {
         td {
-          height: rhythm(6);
+          height: rhythm(3);
         }
       }
       td {
