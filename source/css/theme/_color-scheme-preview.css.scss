@@ -1,0 +1,32 @@
+@import 'colors';
+
+.color-scheme-preview {
+  .primary {
+    .base-color { @extend .pri-0; }
+    .variant1   { @extend .pri-1; }
+    .variant2   { @extend .pri-2; }
+    .variant3   { @extend .pri-3; }
+    .variant4   { @extend .pri-4; }
+  }
+  .secondary-a {
+    .base-color { @extend .sec1-0 !optional; }
+    .variant1   { @extend .sec1-1 !optional; }
+    .variant2   { @extend .sec1-2 !optional; }
+    .variant3   { @extend .sec1-3 !optional; }
+    .variant4   { @extend .sec1-4 !optional; }
+  }
+  .secondary-b {
+    .base-color { @extend .sec2-0 !optional; }
+    .variant1   { @extend .sec2-1 !optional; }
+    .variant2   { @extend .sec2-2 !optional; }
+    .variant3   { @extend .sec2-3 !optional; }
+    .variant4   { @extend .sec2-4 !optional; }
+  }
+  .complementary {
+    .base-color { @extend .compl-0 !optional; }
+    .variant1   { @extend .compl-1 !optional; }
+    .variant2   { @extend .compl-2 !optional; }
+    .variant3   { @extend .compl-3 !optional; }
+    .variant4   { @extend .compl-4 !optional; }
+  }
+}

@@ -1,5 +1,49 @@
+@import 'mixins/color-scheme';
+
 $hue       : 0;    // (0..360)
 $saturation: 100%; // (0..100)
 $lighting  : 50%;  // (0..100)
 $base-color: hsl($hue, $saturation, $lighting);
 
+$model: 'mono';
+$model: 'complement';
+$model: 'triad';
+$model: 'tetrad';
+$model: 'analogic';
+$model: 'accented analogic';
+
+$variant   : 'default scheme';
+$variant   : 'more contrast';
+/*$variant   : 'high contrast';*/
+/*$variant   : 'max contrast';*/
+/*$variant   : 'less contrast';*/
+/*$variant   : 'min contrast';*/
+/*$variant   : 'medium dark';*/
+/*$variant   : 'dark';*/
+/*$variant   : 'very dark';*/
+/*$variant   : 'pastel';*/
+/*$variant   : 'medium dark pastel';*/
+/*$variant   : 'dark pastel';*/
+/*$variant   : 'very dark pastel';*/
+/*$variant   : 'light pale pastel';*/
+/*$variant   : 'medium pale pastel';*/
+/*$variant   : 'dark pale pastel';*/
+/*$variant   : 'very dark pale pastel';*/
+/*$variant   : 'almost grays light';*/
+/*$variant   : 'almost grays with color accents light';*/
+/*$variant   : 'almost grays medium';*/
+/*$variant   : 'almost grays with color accents medium';*/
+/*$variant   : 'almost grays dark';*/
+/*$variant   : 'almost grays with color accents dark';*/
+
+$angle: 30;
+
+@include establish-color-scheme($base-color, $model, $variant, $angle);
+
+// Hide what we don't need
+@if ($model == 'mono') or ($model == 'complement') {
+  .secondary-a, .secondary-b { display: none; }
+}
+@if ($model == 'mono') or ($model == 'triad') or ($model == 'analogic') {
+  .complementary { display: none; }
+}

@@ -12,3 +12,41 @@ colors:
   .palette-bg-2
   .palette
     = partial 'table/table', locals: { colors: data.page.colors }
+
+.color-list
+  .primary
+    %h1 Primary Color:
+    %table
+      %tr
+        %td.pri-0
+        %td.pri-1
+        %td.pri-2
+        %td.pri-3
+        %td.pri-4
+  .complementary
+    %h1 Complementary Color:
+    %table
+      %tr
+        %td.compl-0
+        %td.compl-1
+        %td.compl-2
+        %td.compl-3
+        %td.compl-4
+  .secondary-a
+    %h1 Secondary Color A:
+    %table
+      %tr
+        %td.sec1-0
+        %td.sec1-1
+        %td.sec1-2
+        %td.sec1-3
+        %td.sec1-4
+  .secondary-b
+    %h1 Secondary Color B:
+    %table
+      %tr
+        %td.sec2-0
+        %td.sec2-1
+        %td.sec2-2
+        %td.sec2-3
+        %td.sec2-4
