@@ -1,9 +1,8 @@
 @import 'compass';
+@import 'mixins/gradient';
 
 $outer-column-width: 22%;
 $inner-column-width: 100% - 2*$outer-column-width;
-$gradient-start: hsl(0, 0%, 26%);
-$gradient-stop: hsl(0, 0%, 12%);
 // table margin:
 $margin-vertical: 2; // lines
 $margin-horizontal: 3; // em
@@ -13,17 +12,15 @@ $offset-vertical: ($margin-vertical * $base-line-height) - $offset;
 $offset-horizontal: ($margin-horizontal * $base-font-size) - $offset;
 
 .color-scheme-preview {
-  @include background-image(linear-gradient(top,  $gradient-start 0%, $gradient-stop 100%));
+  @include black-gradient;
   margin: {
     right: auto;
     left: auto;
   }
   @include rhythm(2,0,0,2);
-  width: 80%;
+  /*width: 80%;*/
   height: rhythm(24);
   position: relative;
-  @include box-shadow(rgba(black, 0.6) 6px 6px 6px);
-  @include border-radius(9px);
   .palette-bg-1 {
     position: absolute;
     top: $offset-vertical;

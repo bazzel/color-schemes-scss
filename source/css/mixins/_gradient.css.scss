@@ -1,0 +1,9 @@
+@import 'compass';
+
+@mixin black-gradient {
+  $gradient-start: hsl(0, 0%, 26%);
+  $gradient-stop: hsl(0, 0%, 12%);
+  @include background-image(linear-gradient(top,  $gradient-start 0%, $gradient-stop 100%));
+  @include box-shadow(rgba(black, 0.6) 6px 6px 6px);
+  @include border-radius(9px);
+}

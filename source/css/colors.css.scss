@@ -6,14 +6,14 @@ $lighting  : 50%;  // (0..100)
 $base-color: hsl($hue, $saturation, $lighting);
 
 $model: 'mono';
-$model: 'complement';
-$model: 'triad';
-$model: 'tetrad';
-$model: 'analogic';
+/*$model: 'complement';*/
+/*$model: 'triad';*/
+/*$model: 'tetrad';*/
+/*$model: 'analogic';*/
 $model: 'accented analogic';
 
 $variant   : 'default scheme';
-$variant   : 'more contrast';
+/*$variant   : 'more contrast';*/
 /*$variant   : 'high contrast';*/
 /*$variant   : 'max contrast';*/
 /*$variant   : 'less contrast';*/
