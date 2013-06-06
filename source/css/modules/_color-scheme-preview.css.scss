@@ -17,8 +17,6 @@ $offset-horizontal: ($margin-horizontal * $base-font-size) - $offset;
     right: auto;
     left: auto;
   }
-  @include rhythm(2,0,0,2);
-  /*width: 80%;*/
   height: rhythm(24);
   position: relative;
   .palette-bg-1 {
@@ -71,6 +69,10 @@ $offset-horizontal: ($margin-horizontal * $base-font-size) - $offset;
         }
         .dark {
           color: hsl(0, 100%, 0%);
+        }
+        .hsl {
+          @include adjust-font-size-to(11px);
+          @include text-shadow(rgba(white, 0.5) 1px 1px 0);
         }
       }
     }

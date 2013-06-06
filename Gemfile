@@ -5,3 +5,4 @@ source 'http://rubygems.org'
 gem 'html2haml'
 gem "middleman", "~>3.0.13"
 gem 'middleman-livereload'
+gem 'susy'
