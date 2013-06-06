@@ -1,4 +1,5 @@
 # Color Schemes with Sass
+
 This project is a personal attempt to get more control over colors used in webpages using [Sass](http://sass-lang.com/).
 
 ## Motivation
@@ -9,6 +10,7 @@ So one day I decided to dive into this matter, hoping to get a better understand
 
 
 ## Changing color, scheme and tints
+
 The most important file in this project is `source/css/colors.css.scss`, which acts as a sort of configuration file.
 
 By changing different values for:
@@ -26,7 +28,10 @@ The main logic for generating the color scheme and the different tints is locate
 
 ## Setup
 
-    gem install
+    git clone git://github.com/bazzel/color-schemes-scss.git
+    cd color-schemes-scss
+    gem install bundler
+    bundle install
     middleman
 
 Open your favorite browser and navigate to `http://localhost:4567`.
