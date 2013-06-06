@@ -8,7 +8,6 @@ For a long time I've been impressed by [ColorScheme Designer](http://colorscheme
 
 So one day I decided to dive into this matter, hoping to get a better understanding of color, schemes and how to generate these myself.
 
-
 ## Changing color, scheme and tints
 
 The most important file in this project is `source/css/colors.css.scss`, which acts as a sort of configuration file.
@@ -36,5 +35,10 @@ The main logic for generating the color scheme and the different tints is locate
 
 Open your favorite browser and navigate to `http://localhost:4567`.
 
+## One more thing
+
+You'll probably notice that the page used in the project has a lot of... let's say, similarities with one of the elements used by [ColorScheme Designer](http://colorschemedesigner.com/). I must confess, I'm not a great designer, so i just... re-used this component.
+
+I hope this is no problem. If so, just let me know and I will update mine.
 
 
