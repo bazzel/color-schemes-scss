@@ -76,4 +76,6 @@ configure :build do
   # set :http_path, "/Content/images/"
 end
 
-activate :livereload
+configure :development do
+  activate :livereload
+end

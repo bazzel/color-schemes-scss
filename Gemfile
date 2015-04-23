@@ -1,8 +1,7 @@
-# If you have OpenSSL installed, we recommend updating
-# the following line to use "https"
-source 'http://rubygems.org'
+# If you do not have OpenSSL installed, update
+# the following line to use "http://" instead
+source 'https://rubygems.org'
 
-gem 'html2haml'
-gem "middleman", "~>3.0.13"
+gem "middleman", "~>3.3.10"
 gem 'middleman-livereload'
 gem 'susy'
