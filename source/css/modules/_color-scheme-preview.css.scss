@@ -1,21 +1,5 @@
-@import 'mixins/gradient';
-
-$outer-column-width: 22%;
-$inner-column-width: 100% - 2*$outer-column-width;
-// table margin:
-$margin-vertical: 2; // lines
-$margin-horizontal: 3; // em
-// offset for white and black background:
-$offset: 6px;
-$offset-vertical: ($margin-vertical * $base-line-height) - $offset;
-$offset-horizontal: ($margin-horizontal * $base-font-size) - $offset;
-
 .color-scheme-preview {
   @include black-gradient;
-  margin: {
-    right: auto;
-    left: auto;
-  }
   height: rhythm(24);
   position: relative;
   .palette-bg-1 {

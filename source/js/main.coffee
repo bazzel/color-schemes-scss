@@ -1,4 +1,5 @@
-#= require './vendor/jquery.color-2.1.2.js'
+#= require 'jquery'
+#= require_tree .
 
 $ ->
   $('.color-scheme-preview table tr td').each (idx, el) ->

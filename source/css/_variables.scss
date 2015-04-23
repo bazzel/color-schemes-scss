@@ -5,5 +5,13 @@ $susy: (
   gutters: 1/4
 );
 
-$h1-font-size: $base-font-size;
+$outer-column-width:  22%;
+$inner-column-width:  100% - 2*$outer-column-width;
+// table margin:
+$margin-vertical:     2; // lines
+$margin-horizontal:   3; // em
+// offset for white and black background:
+$offset:              6px;
+$offset-vertical:     ($margin-vertical * $base-line-height) - $offset;
+$offset-horizontal:   ($margin-horizontal * $base-font-size) - $offset;
 
