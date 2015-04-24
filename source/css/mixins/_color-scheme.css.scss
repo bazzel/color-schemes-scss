@@ -43,7 +43,7 @@
 @function adjust-base-color($base-color, $scheme, $n) {
   $sval: percentage(nth(nth($scheme, $n), 1))/100;
   $lval: percentage(nth(nth($scheme, $n), 2))/100;
-  $color: adjust-color($base-color, $saturation: $sval, $lightness: $lval);
+  $color: scale-color($base-color, $saturation: $sval, $lightness: $lval);
 
   @return $color;
 }
