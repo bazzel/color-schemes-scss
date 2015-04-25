@@ -9,18 +9,18 @@
     .variant4   { background-color: $color-primary-4; }
   }
   .secondary-a {
-    .base-color { @extend .sec1-0 !optional; }
-    .variant1   { @extend .sec1-1 !optional; }
-    .variant2   { @extend .sec1-2 !optional; }
-    .variant3   { @extend .sec1-3 !optional; }
-    .variant4   { @extend .sec1-4 !optional; }
+    .base-color { background-color: $color-secondary-1-0; }
+    .variant1   { background-color: $color-secondary-1-1; }
+    .variant2   { background-color: $color-secondary-1-2; }
+    .variant3   { background-color: $color-secondary-1-3; }
+    .variant4   { background-color: $color-secondary-1-4; }
   }
   .secondary-b {
-    .base-color { @extend .sec2-0 !optional; }
-    .variant1   { @extend .sec2-1 !optional; }
-    .variant2   { @extend .sec2-2 !optional; }
-    .variant3   { @extend .sec2-3 !optional; }
-    .variant4   { @extend .sec2-4 !optional; }
+    .base-color { background-color: $color-secondary-2-0; }
+    .variant1   { background-color: $color-secondary-2-1; }
+    .variant2   { background-color: $color-secondary-2-2; }
+    .variant3   { background-color: $color-secondary-2-3; }
+    .variant4   { background-color: $color-secondary-2-4; }
   }
   .complementary {
     .base-color { background-color: $color-complement-0; }

@@ -2,6 +2,7 @@ PATH
   remote: /Users/patrickbaselier/code/personal/sass-color-schemes
   specs:
     sass-color-schemes (0.1.0)
+      color-schemer (~> 0.2.8)
       compass (~> 1.0)
 
 GEM
@@ -20,6 +21,8 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.9.1.1)
+    color-schemer (0.2.8)
+      compass-blend-modes (~> 0.0.2)
     compass (1.0.3)
       chunky_png (~> 1.2)
       compass-core (~> 1.0.2)
@@ -27,6 +30,8 @@ GEM
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
       sass (>= 3.3.13, < 3.5)
+    compass-blend-modes (0.0.2)
+      compass
     compass-core (1.0.3)
       multi_json (~> 1.0)
       sass (>= 3.3.0, < 3.5)

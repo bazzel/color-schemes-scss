@@ -34,14 +34,12 @@ $variant   : 'default scheme';
 /*$variant   : 'almost grays dark';*/
 /*$variant   : 'almost grays with color accents dark';*/
 
-$angle: 30;
 
-@include establish-color-scheme($base-color, $model, $variant, $angle);
 
 // Hide what we don't need
-@if ($model == 'mono') or ($model == 'complement') {
+@if ($scheme == 'mono') or ($scheme == 'complement') {
   .secondary-a, .secondary-b { display: none; }
 }
-@if ($model == 'mono') or ($model == 'triad') or ($model == 'analogic') {
+@if ($scheme == 'mono') or ($scheme == 'triad') or ($scheme == 'analogic') {
   .complementary { display: none; }
 }
