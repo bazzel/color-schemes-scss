@@ -1,3 +1,9 @@
+PATH
+  remote: /Users/patrickbaselier/code/personal/sass-color-schemes
+  specs:
+    sass-color-schemes (0.1.0)
+      compass (~> 1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -129,4 +135,5 @@ DEPENDENCIES
   jquery-middleman
   middleman (~> 3.3.10)
   middleman-livereload
+  sass-color-schemes!
   susy

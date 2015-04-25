@@ -15,3 +15,18 @@ $offset:              6px;
 $offset-vertical:     ($margin-vertical * $base-line-height) - $offset;
 $offset-horizontal:   ($margin-horizontal * $base-font-size) - $offset;
 
+$base-color: red;
+$variation: 'lightest pale pastel';
+$model: 'complement';
+
+$color-primary-0: nth(primary-colors(), 1);
+$color-primary-1: nth(primary-colors(), 2);
+$color-primary-2: nth(primary-colors(), 3);
+$color-primary-3: nth(primary-colors(), 4);
+$color-primary-4: nth(primary-colors(), 5);
+
+$color-complement-0: nth(complement-colors(), 1);
+$color-complement-1: nth(complement-colors(), 2);
+$color-complement-2: nth(complement-colors(), 3);
+$color-complement-3: nth(complement-colors(), 4);
+$color-complement-4: nth(complement-colors(), 5);
